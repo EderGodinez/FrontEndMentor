@@ -1,0 +1,32 @@
+
+
+<form (submit)="navigateNext()" id="personal_info" >
+  <div>
+    <h1>
+      Pick adds-ons
+    </h1>
+    <p>
+      Add-ons help enhance your gaming experience
+    </p>
+  </div>
+  <div style="display: flex;gap: 5px; flex-direction: column;">
+    <div class="add_card_container" *ngFor="let add of addsList;let i=index;" [ngClass]="{'selected': isSelected(add.title)}">
+        <div class="checkAdd_Container">
+          <input type="checkbox" [value]="i"   (input)="SelectAdd(i, $event)"  [checked]="isSelected(add.title)">
+          <div class="info_content">
+            <span class="title">
+              {{add.title}}
+            </span>
+            <p>{{add.info}}</p>
+          </div>
+        </div>
+        <span class="price">+{{getPrice(add.Montlyprice)|currency}}/{{MontlyPlan?'mo':'yr'}}</span>
+    </div>
+  </div>
+</form>
+<div style="display: flex;justify-content: space-evenly; ">
+  <button type="button"  class="back_button" (click)="GoBack()">Go Back</button>
+  <button type="submit" class="next_button" form="personal_info">Next Step</button>
+
+</div>
+

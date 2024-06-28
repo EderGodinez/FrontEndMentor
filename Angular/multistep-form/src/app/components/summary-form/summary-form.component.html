@@ -1,0 +1,48 @@
+
+
+<form  (submit)="navigateStep(4)" id="personal_info" >
+  <div>
+    <h1>
+      Finishing up
+    </h1>
+    <p >
+      Double-check everything look OK before cofirming your order.
+    </p>
+  </div>
+  <div class="summary_container">
+    <div class="service_info">
+      <div class="information">
+        <div>
+          <p class="title">{{titlePlan}}({{UserInfo.plan.IsMountlyPlan?'Monthly':'Yearly'}})</p>
+          <p class="link-style" (click)="navigateStep(1)">Change</p>
+        </div>
+        <span class="price title">
+          {{ServicePrice|currency}}/{{UserInfo.plan.IsMountlyPlan?'mo':'yr'}}
+        </span>
+      </div>
+
+      <hr *ngIf="AddsSelected.length>0">
+      <div class="adds_container">
+        <div class="add" *ngFor="let add of AddsSelected">
+          <div class="add_content information">
+            <p>{{add.title}}</p>
+            <p class="title" style="font-weight: 400;">+{{getPrice(add.Montlyprice)|currency}}/{{UserInfo.plan.IsMountlyPlan?'mo':'yr'}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="total_container information" style="margin: 20px 0;">
+      <p>
+    Total (per {{UserInfo.plan.IsMountlyPlan?'month':'year'}})
+      </p>
+      <span class="total_p">
+        +{{TotalPrice|currency}}/{{UserInfo.plan.IsMountlyPlan?'mo':'yr'}}
+      </span>
+    </div>
+  </div>
+</form>
+<div style="display: flex;justify-content: space-evenly; ">
+  <button type="button"  class="back_button" (click)="navigateStep(2)">Go Back</button>
+  <button type="submit" class="next_button" form="personal_info">Next Step</button>
+
+</div>

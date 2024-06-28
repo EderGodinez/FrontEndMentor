@@ -1,0 +1,9 @@
+<div [ngClass]="{'selected':isSelected}" class="plan_card" (click)="selectPlan()">
+  <img [src]="plan.logo" alt="logo">
+  <div>
+    <h2>{{plan.title}}</h2>
+  <p style="margin: 5px 0px 5px 0px;">{{ getPrice|currency}}/{{ IsMonthly ? 'mo' : 'yr' }}</p>
+  <span *ngIf="!IsMonthly" >{{plan.info}} </span>
+  </div>
+
+</div>

@@ -1,0 +1,58 @@
+
+<form [formGroup]="infoForm" (submit)="navigateNext()" id="personal_info" >
+  <div>
+    <h1>
+      Personal Info
+    </h1>
+    <p>
+      Please provide your name , email address and phone number
+    </p>
+  </div>
+  <div>
+    <div class="labels_container">
+      <span>Name</span>
+      <span *ngIf="IsValidField('Name')" style="color: red;">{{getErrorMessage('Name')}}</span>
+    </div>
+    <text-field
+      [placeholder]="'e.g Stephen King'"
+      [type]="'text'"
+      maxlength="30"
+      minlength="10"
+      [ClassName]="IsValidField('Name')?'error':''"
+      [formControlName]="'Name'"
+      [value]="getValue('Name')"
+
+     />
+  </div>
+  <div>
+    <div class="labels_container">
+      <span>Email Address</span>
+      <span *ngIf="IsValidField('email')" style="color: red;">{{getErrorMessage('email')}}</span>
+    </div>
+    <text-field
+      [placeholder]="'e.g StephenKing@lorem.com'"
+      [type]="'email'"
+      [ClassName]="IsValidField('email')?'error':''"
+      [formGroup]="infoForm"
+      [formControlName]="'email'"
+      [value]="getValue('email')"
+
+     />
+  </div>
+  <div>
+    <div class="labels_container">
+      <span>Phone Number</span>
+      <span *ngIf="IsValidField('phone')" style="color: red;">{{getErrorMessage('phone')}}</span>
+    </div>
+    <text-field
+      [placeholder]="'e.g +1 234 567 890'"
+      [type]="'number'"
+      [ClassName]="IsValidField('phone')?'error':''"
+      [formGroup]="infoForm"
+      [formControlName]="'phone'"
+      [value]="getValue('phone')"
+     />
+  </div>
+</form>
+
+<button  class="next_button" type="submit" form="personal_info">Next Step</button>

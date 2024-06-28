@@ -1,0 +1,20 @@
+<div class="main">
+  <div [ngSwitch]="CurrentForm" class="form_container">
+    <div class="form_steps">
+      <div class="step_item" *ngFor="let step of stepTitles;let i=index">
+        <div class="step" (click)="navigateStep(i)" [ngClass]="{'active': CurrentForm === i}">{{i+1}}</div>
+        <div class="step_item_info">
+          <span style="color: rgba(240, 248, 255, 0.658);"> STEP {{i+1}}</span>
+        <p style="font-weight: 700; color: aliceblue;">{{step|uppercase}}</p>
+        </div>
+      </div>
+        </div>
+      <div class="form_content">
+      <info-form *ngSwitchCase="0" (nextStep)="NavigateToForm($event)"/>
+      <plan-form *ngSwitchCase="1"  (ChangeStep)="NavigateToForm($event)"/>
+      <adds-form  *ngSwitchCase="2" (ChangeStep)="NavigateToForm($event)"/>
+      <summary-form *ngSwitchCase="3" (ChangeStep)="NavigateToForm($event)"/>
+      <final-form *ngSwitchCase="4"/>
+      </div>
+    </div>
+  </div>

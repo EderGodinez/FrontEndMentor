@@ -1,0 +1,38 @@
+:host
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    gap: 10px;
+    padding: 80px 0px;
+    min-width: 100%;
+    align-items: center;
+    @media screen and (max-width: 670px)
+    {
+        padding: 20px 0px;
+    }
+    h1
+    {
+        color: hsl(213, 96%, 18%);
+        margin-bottom: 10px;
+    }
+    p
+    {
+        color: gainsboro;
+        margin-bottom: 20px;
+        max-width: 70%;
+    }
+    img{
+        width: 100%;
+        max-width: 15vh;
+        height: auto;
+    }
+}
+.center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}

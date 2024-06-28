@@ -1,0 +1,38 @@
+
+.text_field {
+  font-size: 16px;
+  font-family: Ubuntu;
+  font-weight: 700;
+  color:hsl(213, 96%, 18%);
+  width: 100%;
+  border-radius: 5px;
+  padding: 15px;
+  outline: none;
+  border: 1px solid gainsboro;
+  margin-bottom: 10px;
+  &:focus {
+    border: 1px solid hsl(243, 100%, 62%);
+  }
+  &::placeholder {
+    color:hsl(213, 96%, 18%);
+    font-size: 16px;
+    font-family: Ubuntu;
+    font-weight: 700;
+  }
+  &::target-text {
+    color:hsl(213, 96%, 18%);
+    font-size: 16px;
+    font-family: Ubuntu;
+    font-weight: 700;
+  }
+}
+.error{
+    border: 1px solid hsl(0, 100%, 50%);
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    }
+input[type=number] { -moz-appearance:textfield; }
+

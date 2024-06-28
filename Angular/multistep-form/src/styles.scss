@@ -1,0 +1,56 @@
+/* You can add global styles to this file, and also import other style files */
+//PRIMARY
+$Marine_blue:hsl(213, 96%, 18%);
+$Purplish_blue: hsl(243, 100%, 62%);
+$Pastel_blue: hsl(228, 100%, 84%);
+$Light_blue: hsl(207, 100%, 95%);
+$Strawberry_red: hsl(354, 84%, 57%);
+//NEUTRAL
+$Coolgray: hsl(231, 11%, 63%);
+$Lighgray: hsl(229, 24%, 87%);
+$Magnolia: hsl(217, 100%, 97%);
+$Alabaster: hsl(231, 100%, 99%);
+$White: hsl(0, 0%, 100%);
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: Ubuntu;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.next_button{
+  font-size: 16px;
+  align-self: end;
+  max-width: 200px;
+  padding: 20px 30px;
+  border: none;
+  border-radius: 5px;
+  background-color: hsl(213, 96%, 18%);
+  color: hsl(207, 100%, 95%);
+  font-family: Ubuntu;
+  font-weight: 400;
+  cursor: pointer;
+}
+.back_button{
+  font-size: 16px;
+  align-self: start;
+  max-width: 200px;
+  padding: 20px 30px;
+  border: none;
+  border-radius: 5px;
+  background-color:transparent;
+  color: hsl(204, 3%, 63%);
+  font-family: Ubuntu;
+  font-weight: 700;
+  cursor: pointer;
+}
+
